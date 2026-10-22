@@ -1,5 +1,10 @@
 # OHS Edge Evaluation & RLHF Suite (`ohs-edge-evals-suite`)
 
+<p align="left">
+  <a href="https://fredhersch.github.io/ohs-edge-evals/"><img src="https://img.shields.io/badge/🧪%20OHS%20Labs-Experimental%20Research-8b5cf6?style=for-the-badge" alt="OHS Labs Research"></a>
+  <a href="https://fredhersch.github.io/ohs-edge-evals/"><img src="https://img.shields.io/badge/Open%20Health%20Stack-Tooling-06b6d4?style=for-the-badge" alt="Open Health Stack"></a>
+</p>
+
 A lightweight, zero-dependency visual evaluation workbench and clinical alignment platform designed specifically for Small Language Models (1B–4B parameter class, e.g. Gemma 4 2B, MedGemma 4B, Qwen 2.5 3B) deployed at the healthcare edge.
 
 ---
