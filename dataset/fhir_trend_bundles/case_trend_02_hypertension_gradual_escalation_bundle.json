@@ -1,0 +1,94 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "bundle-case-trend-02-hypertension-escalation",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-danladi",
+        "name": [{"family": "Danladi", "given": ["Musa"]}],
+        "gender": "male",
+        "birthDate": "1972-04-10",
+        "address": [{"city": "Zaria", "district": "Kaduna North"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-htn",
+        "clinicalStatus": {"coding": [{"system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active"}]},
+        "code": {"coding": [{"system": "http://snomed.info/sct", "code": "38341003", "display": "Essential hypertension"}]},
+        "subject": {"reference": "Patient/patient-danladi"},
+        "onsetDateTime": "2023-01-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-m1",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-danladi"},
+        "effectiveDateTime": "2026-07-10T08:30:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 124, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 80, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Normal / Controlled"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-m2",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-danladi"},
+        "effectiveDateTime": "2026-08-12T09:00:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 134, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 86, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "Warning", "display": "Pre-hypertension Creep"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+10/+6 mmHg (1 mo)"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-m3",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-danladi"},
+        "effectiveDateTime": "2026-09-14T10:00:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 148, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 92, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "High", "display": "Stage 1 Uncontrolled"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+24/+12 mmHg (2 mo)"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-m4",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-danladi"},
+        "effectiveDateTime": "2026-10-18T08:45:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 168, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 104, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "Critical", "display": "Stage 2 / Hypertensive Urgency"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+44/+24 mmHg escalation (3 mo)"}]
+      }
+    }
+  ]
+}

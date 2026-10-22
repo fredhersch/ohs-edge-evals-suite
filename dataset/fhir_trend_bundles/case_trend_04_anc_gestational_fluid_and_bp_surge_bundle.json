@@ -1,0 +1,158 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "bundle-case-trend-04-anc-gestational-fluid-and-bp-surge",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-aliyu-zainab",
+        "name": [{"family": "Aliyu", "given": ["Zainab"]}],
+        "gender": "female",
+        "birthDate": "1997-03-14",
+        "address": [{"city": "Sokoto", "district": "Wamakko"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-anc-pregnancy",
+        "clinicalStatus": {"coding": [{"system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active"}]},
+        "code": {"coding": [{"system": "http://snomed.info/sct", "code": "77386006", "display": "Pregnancy 34 weeks"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w28-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-09-02T10:00:00Z",
+        "valueQuantity": {"value": 61.5, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Baseline Weight"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w28-bp",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-09-02T10:05:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 114, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 72, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Normal"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w30-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-09-16T09:30:00Z",
+        "valueQuantity": {"value": 62.1, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Normal Physiological Gain"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+0.6 kg in 2w"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w30-bp",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-09-16T09:35:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 118, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 76, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Normal"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w32-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-09-30T10:15:00Z",
+        "valueQuantity": {"value": 64.8, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Warning", "display": "Excessive Rapid Weight Gain / Fluid Retention"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+2.7 kg in 2w"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w32-bp",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-09-30T10:20:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 134, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 86, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "Warning", "display": "Pre-hypertension Jump"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w34-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-10-18T11:00:00Z",
+        "valueQuantity": {"value": 67.4, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Critical", "display": "Critical Fluid Surge (+5.9 kg in 6w)"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+2.6 kg in 2w (Total +5.9 kg)"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w34-bp",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-10-18T11:05:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]}, "valueQuantity": {"value": 152, "unit": "mmHg"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]}, "valueQuantity": {"value": 98, "unit": "mmHg"}}
+        ],
+        "interpretation": [{"coding": [{"code": "Critical", "display": "Stage 2 Hypertensive Emergency"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-w34-prot",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "2888-6", "display": "Protein [Mass/volume] in Urine"}]},
+        "subject": {"reference": "Patient/patient-aliyu-zainab"},
+        "effectiveDateTime": "2026-10-18T11:10:00Z",
+        "valueString": "2+",
+        "interpretation": [{"coding": [{"code": "Abnormal", "display": "2+ Proteinuria / Pre-eclampsia Sign"}]}]
+      }
+    }
+  ]
+}

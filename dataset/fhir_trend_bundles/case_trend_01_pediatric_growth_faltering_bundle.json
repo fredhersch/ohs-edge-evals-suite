@@ -1,0 +1,95 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "bundle-case-trend-01-growth-faltering",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-juma",
+        "name": [{"family": "Juma", "given": ["Baby"]}],
+        "gender": "male",
+        "birthDate": "2026-01-15",
+        "address": [{"city": "Zangon Kataf", "district": "Kaduna South"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-growth-faltering",
+        "clinicalStatus": {"coding": [{"system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active"}]},
+        "code": {"coding": [{"system": "http://snomed.info/sct", "code": "248325000", "display": "Growth faltering"}]},
+        "subject": {"reference": "Patient/patient-juma"},
+        "onsetDateTime": "2026-09-16"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-weight-m1",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-juma"},
+        "effectiveDateTime": "2026-07-15T09:30:00Z",
+        "valueQuantity": {"value": 8.5, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Normal"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-weight-m2",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-juma"},
+        "effectiveDateTime": "2026-08-15T10:15:00Z",
+        "valueQuantity": {"value": 8.4, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Warning", "display": "Flat / Static Weight"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "-0.1 kg (1 mo)"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-weight-m3",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-juma"},
+        "effectiveDateTime": "2026-09-16T09:00:00Z",
+        "valueQuantity": {"value": 8.1, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Warning", "display": "Faltering Weight"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "-0.4 kg (2 mo)"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-weight-m4",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-juma"},
+        "effectiveDateTime": "2026-10-18T11:00:00Z",
+        "valueQuantity": {"value": 7.6, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Critical", "display": "Severe Faltering / Danger Sign"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "-0.9 kg total loss (3 mo)"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-muac-m4",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "exam"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "56051-6", "display": "Mid-upper arm circumference"}]},
+        "subject": {"reference": "Patient/patient-juma"},
+        "effectiveDateTime": "2026-10-18T11:05:00Z",
+        "valueQuantity": {"value": 11.9, "unit": "cm", "system": "http://unitsofmeasure.org", "code": "cm"},
+        "interpretation": [{"coding": [{"code": "Yellow", "display": "Yellow (Moderate Acute Malnutrition / At-Risk)"}]}]
+      }
+    }
+  ]
+}

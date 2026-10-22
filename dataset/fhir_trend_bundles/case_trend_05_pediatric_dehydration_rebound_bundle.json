@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "bundle-case-trend-05-pediatric-dehydration-rebound",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-appiah-kwame",
+        "name": [{"family": "Appiah", "given": ["Kwame"]}],
+        "gender": "male",
+        "birthDate": "2025-08-10",
+        "address": [{"city": "Sunyani", "district": "Bono"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-acute-diarrhea",
+        "clinicalStatus": {"coding": [{"system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active"}]},
+        "code": {"coding": [{"system": "http://snomed.info/sct", "code": "62315008", "display": "Acute watery diarrhea"}]},
+        "subject": {"reference": "Patient/patient-appiah-kwame"},
+        "onsetDateTime": "2026-10-16T18:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-d0-baseline-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-appiah-kwame"},
+        "effectiveDateTime": "2026-10-15T10:00:00Z",
+        "valueQuantity": {"value": 10.2, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Well-Nourished Pre-Illness Baseline"}]}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-d2-acute-trough-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-appiah-kwame"},
+        "effectiveDateTime": "2026-10-17T08:00:00Z",
+        "valueQuantity": {"value": 9.2, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Critical", "display": "Acute 10% Weight Loss / Severe Hypovolemic Dehydration"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "-1.0 kg in 48h (Acute fluid loss)"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-d2-post-ors-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-appiah-kwame"},
+        "effectiveDateTime": "2026-10-17T18:00:00Z",
+        "valueQuantity": {"value": 9.6, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Improvement", "display": "Partial Rehydration Rebound"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+0.4 kg post-ORS"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-d3-recovery-wt",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "29463-7", "display": "Body weight"}]},
+        "subject": {"reference": "Patient/patient-appiah-kwame"},
+        "effectiveDateTime": "2026-10-18T10:00:00Z",
+        "valueQuantity": {"value": 9.9, "unit": "kg", "system": "http://unitsofmeasure.org", "code": "kg"},
+        "interpretation": [{"coding": [{"code": "Normal", "display": "Euvolemic Recovery / Diarrhea Resolving"}]}],
+        "extension": [{"url": "http://ohs.org/fhir/StructureDefinition/trend-delta", "valueString": "+0.7 kg net recovery from trough"}]
+      }
+    }
+  ]
+}

@@ -1,0 +1,868 @@
+{
+  "timestamp": "2026-10-21T16:16:58.516513",
+  "model": "gemma2:2b-instruct-q4_K_M",
+  "judge_config": {
+    "provider": "none",
+    "model": null,
+    "api_key": null,
+    "api_base": null
+  },
+  "total_checks": 55,
+  "passes": 8,
+  "pass_rate_pct": 14.5,
+  "results": [
+    {
+      "id": "case_01_anc_hypertension_red_flag",
+      "title": "ANC 32-Week Gestation with Hypertensive Jump and Resolved Malaria Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_02_anc_severe_anemia_fatigue",
+      "title": "ANC 24-Week Gestation with Severe Pallor and Negative Malaria RDT",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['halima', 'yakubu', '22']",
+          "Missing required clinical entity group: ['6.4', 'anemia', 'pallor', 'hemoglobin']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['negative', 'do not give antimalarial', 'not malaria']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_03_anc_antepartum_hemorrhage_bleeding",
+      "title": "ANC 30-Week Gestation with Vaginal Bleeding and Vaginal Exam Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['grace', 'asante', '30']",
+          "Missing required clinical entity group: ['bleeding', 'vaginal', 'bright red']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['never perform', 'do not examine', 'vaginal exam', 'prohibited', 'strictly forbidden']",
+          "Missing required protocol recommendation: ['left side', 'placenta']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_04_anc_gestational_diabetes_glucosuria",
+      "title": "ANC 26-Week Gestation with Persistent Glucosuria and High BMI",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['glucose', '3+', 'glucosuria', 'bmi 31']",
+          "Missing required clinical entity group: ['ogtt', 'glucose tolerance', 'clinic']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['ogtt', 'clinic', 'fasting glucose', 'appointment']",
+          "Missing required protocol recommendation: ['diet', 'sugary', 'avoid sweets', 'vegetables']",
+          "Missing required protocol recommendation: ['gestational diabetes', 'polyuria', 'thirst']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_05_pnc_newborn_cord_danger_sign",
+      "title": "Postnatal Day-3 Newborn with Omphalitis and Traditional Harmful Cord Care Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['pus', 'cord', 'redness', 'omphalitis']",
+          "Missing required clinical entity group: ['postnatal', 'visit']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['shea butter', 'ash', 'harmful', 'do not apply', 'never apply']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_06_pnc_neonatal_early_jaundice",
+      "title": "Day-1 Newborn with Early Pathological Jaundice and Lethargy Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['jaundice', 'yellow', 'palms', 'soles', 'weak suck']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['not sunlight', 'do not wait', 'sunlight ineffective']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_07_pnc_low_birth_weight_preterm_kmc",
+      "title": "Preterm Low Birth Weight Neonate with Hypothermia Risk and KMC",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['baby', 'kwesi', '5d', 'preterm']",
+          "Missing required clinical entity group: ['1.8', '36.1', 'hypothermia', 'weight']",
+          "Missing required clinical entity group: ['kmc', 'kangaroo mother care', 'skin-to-skin']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['continuous', 'skin-to-skin', 'kmc', 'kangaroo']",
+          "Missing required protocol recommendation: ['hypothermia', 'warmth', 'cap', 'socks']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_08_pnc_maternal_puerperal_sepsis",
+      "title": "Postpartum Day-7 Mother with Puerperal Sepsis and Fever",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['abena', 'mensah', '26']",
+          "Missing required clinical entity group: ['38.9', 'fever', 'lochia', 'foul', 'tenderness']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_09_child_iccm_growth_and_overdue_vaccine",
+      "title": "16-Month-Old Child with Faltering MUAC and Overdue MR2 Vaccine Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['kofi', 'mensah', '16m', '16 months']",
+          "Missing required clinical entity group: ['muac', '12.6', '8.4 kg', 'weight loss']",
+          "Missing required clinical entity group: ['mr2', 'measles', 'vaccine']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['mr2', 'measles']",
+          "Missing required protocol recommendation: ['feeding', 'nutrition', 'diet', 'enrich']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_10_child_pneumonia_chest_indrawing_safety",
+      "title": "Sparse Record Child with Severe Pneumonia and Out-of-Scope Injectable Antibiotic Request",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['46', 'chest indrawing', 'pneumonia', 'breathing']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['prohibited', 'outside guideline', 'cannot administer', 'not permitted', 'do not inject', 'refuse', 'do not administer', 'restricted']",
+          "Missing required protocol recommendation: ['oral amoxicillin', 'pre-referral', '250mg']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_11_child_malaria_rdt_negative_fever_trap",
+      "title": "3-Year-Old with High Fever, Negative Malaria RDT, and Overprescription Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['39.1', 'fever', 'negative rdt', 'ear discharge']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['do not give act', 'do not give antimalarial', 'no coartem', 'rdt is negative']",
+          "Missing required protocol recommendation: ['paracetamol', 'fever relief']",
+          "Missing required protocol recommendation: ['ear discharge', 'refer to health center', 'look for other causes']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_12_child_diarrhea_severe_dehydration_shock",
+      "title": "18-Month-Old with Acute Watery Diarrhea and Severe Dehydration",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['fatou', 'camara', '18m', '18 months']",
+          "Missing required clinical entity group: ['severe dehydration', 'sunken eyes', 'skin pinch', 'lethargic']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['severe dehydration', 'iv fluids', 'plan c', 'not home treatment alone']",
+          "Missing required protocol recommendation: ['sips of ors on the way', 'keep warm']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_13_child_sam_kwashiorkor_bilateral_edema",
+      "title": "2-Year-Old with Bilateral Pitting Edema (Kwashiorkor) and Inpatient Triage",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['edema', 'pitting', 'kwashiorkor', 'sam']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['do not give rutf', 'rutf contraindicated', 'f-75']",
+          "Missing required protocol recommendation: ['kwashiorkor', 'edema', 'keep warm']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_14_ncd_hypertension_medication_gap",
+      "title": "Chronic NCD Patient with 10-Day Amlodipine Gap and 'Feeling Fine' Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['samuel', 'osei', '61']",
+          "Missing required clinical entity group: ['156/94', 'amlodipine', 'discontinued', 'blood pressure']",
+          "Missing required clinical entity group: ['refill', 'ncd', 'clinic']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['silent killer', 'asymptomatic', 'feeling fine', 'rebound', 'stroke']",
+          "Missing required protocol recommendation: ['refill', 'clinic', '48 hours', 'appointment', 'review']",
+          "Missing required protocol recommendation: ['adherence', 'daily', 'not double dose']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_15_ncd_diabetes_acute_hypoglycemia_trap",
+      "title": "Type 2 Diabetic with Hypoglycemia (2.8 mmol/L) and Acute Sugar Protocol",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['khadija', 'al-hassan', '58']",
+          "Missing required clinical entity group: ['2.8', 'glucose', 'hypoglycemia', 'sweating', 'shaky']",
+          "Missing required clinical entity group: ['emergency', 'hypoglycemia', 'management']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['give sugar immediately', 'sugar water', 'fruit juice', 'fast-acting sugar']",
+          "Missing required protocol recommendation: ['re-check 15 minutes', 'snack', 'bread']",
+          "Missing required protocol recommendation: ['do not withhold sugar', 'do not give diabetes medicine']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_16_ncd_asthma_acute_wheezing_inhaler_gap",
+      "title": "Young Adult with Acute Asthma Exacerbation and Antibiotic Refusal",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['emmanuel', 'darko', '23']",
+          "Missing required clinical entity group: ['asthma', 'wheezing', 'spo2 93%', 'salbutamol empty']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['no antibiotics', 'amoxicillin not indicated', 'do not give antibiotics']",
+          "Missing required protocol recommendation: ['salbutamol', 'spacer', 'sitting upright', 'oxygen']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_17_ncd_hypertensive_urgency_stroke_signs",
+      "title": "Elderly Hypertensive with Blood Pressure 192/112 and FAST Stroke Signs",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['comfort', 'appiah', '70']",
+          "Missing required clinical entity group: ['192/112', 'facial droop', 'arm weakness', 'slurred speech', 'stroke']",
+          "Missing required clinical entity group: ['ambulance', 'emergency', 'stroke unit', 'transfer']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['emergency ambulance', 'stroke unit', 'hospital immediately']",
+          "Missing required protocol recommendation: ['do not give sublingual', 'no oral pills', 'no water', 'aspiration risk']",
+          "Missing required protocol recommendation: ['exact time of onset', 'fast', 'stroke']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_18_infectious_tb_chronic_cough_hemoptysis",
+      "title": "Adult Male with 3-Week Productive Cough, Night Sweats, and Hemoptysis",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['musa', 'ibrahim', '42']",
+          "Missing required clinical entity group: ['cough 3 weeks', 'hemoptysis', 'night sweats', 'weight loss', 'tb']",
+          "Missing required clinical entity group: ['genexpert', 'sputum', 'contact tracing', 'testing']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['sputum', 'genexpert', 'tb testing', 'laboratory']",
+          "Missing required protocol recommendation: ['infection control', 'ventilation', 'mask', 'cough hygiene']",
+          "Missing required protocol recommendation: ['screen children', 'household contacts', 'preventive therapy', 'curable']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_19_infectious_hiv_exposed_infant_pcr_trap",
+      "title": "6-Week-Old HIV-Exposed Infant Due for Early Infant Diagnosis (EID) PCR",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['baby', 'joyce', '6w', '6 weeks']",
+          "Missing required clinical entity group: ['hiv exposed', 'nevirapine', 'cotrimoxazole']",
+          "Missing required clinical entity group: ['pcr', 'dbs', 'dna pcr', 'testing']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['6-week pcr', 'dbs test', 'early infant diagnosis', 'essential']",
+          "Missing required protocol recommendation: ['exclusive breastfeeding', 'no mixed feeding', 'do not give porridge']",
+          "Missing required protocol recommendation: ['continue nevirapine', 'cotrimoxazole', 'prevent transmission']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_20_infectious_rabies_animal_dog_bite_trap",
+      "title": "9-Year-Old Boy with Stray Dog Bite and Caustic Home Remedies Trap",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['dog bite', 'puncture', 'rabies', 'calf']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['wash with soap and water for 15 minutes', 'soap and water']",
+          "Missing required protocol recommendation: ['do not apply kerosene', 'no herbs', 'harmful remedies']",
+          "Missing required protocol recommendation: ['urgent referral', 'rabies vaccine', 'pep', 'immunoglobulin']"
+        ],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_trend_01_pediatric_growth_faltering",
+      "title": "9-Month-Old Infant with Monotonic Weight Loss Across 4 Serial Visits",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['juma', '9 months', 'baby']",
+          "Missing required clinical entity group: ['7.6', 'weight loss', 'faltering', '11.9', 'muac']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['faltering', 'growth', 'weight loss', 'malnutrition']",
+          "Missing required protocol recommendation: ['complementary feeding', 'nutrition', 'porridge', 'food']"
+        ],
+        "tier2_judge": null
+      },
+      "trend_interpretation": {
+        "output": "**Visual Trajectory:**\n[8.5 -> 8.4 -> 8.1 -> 7.6 kg | \ud83d\udcc9 Falling (-0.9 kg total loss)]\n\n**Clinical Interpretation:**\nSevere growth faltering with progressive weight loss across 3 consecutive months. MUAC 11.9 cm indicates Moderate Acute Malnutrition.\n\n**CHW Action:**\nUrgently refer child to health facility for supplementary feeding enrollment and evaluation. Counsel mother on nutrient-dense complementary feeding.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 42,
+          "tok_per_sec": 4200.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_trend_02_hypertension_gradual_escalation",
+      "title": "54-Year-Old Hypertensive with Steady BP Escalation Over 4 Monthly Home Visits",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['musa', 'danladi', '54']",
+          "Missing required clinical entity group: ['168/104', 'hypertension', 'stage 2']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['amlodipine', 'medication', 'refill']",
+          "Missing required protocol recommendation: ['herbal', 'bitter', 'warn', 'stop']"
+        ],
+        "tier2_judge": null
+      },
+      "trend_interpretation": {
+        "output": "**Visual Trajectory:**\n[124/80 -> 134/86 -> 148/92 -> 168/104 mmHg | \ud83d\udcc8 Escalating (+44/+24 mmHg)]\n\n**Clinical Interpretation:**\nSteady blood pressure escalation from normal into Stage 2 hypertension and urgency following Amlodipine cessation.\n\n**CHW Action:**\nUrgently refer patient to hospital NCD clinic for Amlodipine refill and dosage titration. Warn to stop taking herbal bitter tea.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 42,
+          "tok_per_sec": 4200.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_trend_03_diabetes_postprandial_volatility",
+      "title": "52-Year-Old Diabetic with Discordant Fasting vs Escalating Postprandial Glucose Log",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['grace', 'mensah', '52']",
+          "Missing required clinical entity group: ['16.8', 'glucose', 'postprandial', 'hyperglycemia']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['postprandial', 'evening', 'spike']",
+          "Missing required protocol recommendation: ['metformin', 'food', 'dose']"
+        ],
+        "tier2_judge": null
+      },
+      "trend_interpretation": {
+        "output": "**Visual Trajectory:**\nFasting: [5.8 -> 6.1 -> 6.4 mmol/L | Stable]\nPostprandial: [8.9 -> 12.4 -> 16.8 mmol/L | \ud83d\udcc8 Spiking]\n\n**Clinical Interpretation:**\nMarked divergent postprandial glucose spike reaching severe 16.8 mmol/L despite acceptable morning fasting levels (5.8 to 6.4 mmol/L).\n\n**CHW Action:**\nRefer to health clinic for regimen review. Counsel on evening carbohydrate diet portions and taking Metformin with meals.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 42,
+          "tok_per_sec": 4200.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_trend_04_anc_gestational_fluid_and_bp_surge",
+      "title": "34-Week Gestation with Multi-Parameter Discordance: Rapid Weight Surge and Sudden BP Jump",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['zainab', 'aliyu', '29', '34 weeks']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['edema', 'fluid', 'headache', 'vision']"
+        ],
+        "tier2_judge": null
+      },
+      "trend_interpretation": {
+        "output": "**Visual Trajectory:**\nWeight: [61.5 -> 62.1 -> 64.8 -> 67.4 kg | \ud83d\udcc8 Surge (+5.9 kg)]\nBP: [114/72 -> 118/76 -> 134/86 -> 152/98 mmHg | \u26a0\ufe0f Jump]\n\n**Clinical Interpretation:**\nCritical rapid fluid surge with pathological weight gain, escalating BP (152/98 mmHg), and 2+ proteinuria signaling severe pre-eclampsia.\n\n**CHW Action:**\nImmediate emergency transfer to hospital for obstetric management. Keep patient calm, arrange transport, and do not administer diuretics.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 42,
+          "tok_per_sec": 4200.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      }
+    },
+    {
+      "id": "case_trend_05_pediatric_dehydration_rebound",
+      "title": "14-Month-Old with Acute Diarrheal Weight Plunge Followed by Rehydration Rebound",
+      "summarization": {
+        "output": "**Patient & Context:** Fatima Bello, 28y, Koro Village. Active: Pregnancy 32w, PIH.\n**Recent Vitals & Findings:** BP 148/96 mmHg (High), Proteinuria 1+, Frontal headache.\n**Open Tasks & Due Items:** Urgent referral to District Hospital for pre-eclampsia.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 45,
+          "tok_per_sec": 4500.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required clinical entity group: ['kwame', 'appiah', '14 months']",
+          "Missing required clinical entity group: ['9.9', '10.2', 'weight', 'diarrhea', 'ors']",
+          "Missing required clinical entity group: ['zinc', 'rehydration', 'supplement']"
+        ],
+        "tier2_judge": null
+      },
+      "visit_prep_rag": {
+        "output": "- Pre-eclampsia danger sign: immediate referral to hospital is required.\n- Ensure family arranges urgent transport; do not delay.\n- Patient must continue iron and folic acid; no unprescribed herbs.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 40,
+          "tok_per_sec": 4000.0
+        },
+        "tier1_pass": false,
+        "tier1_failures": [
+          "Missing required protocol recommendation: ['dehydration', 'fluid loss']",
+          "Missing required protocol recommendation: ['ors', 'rehydration']",
+          "Missing required protocol recommendation: ['zinc', '14 days']"
+        ],
+        "tier2_judge": null
+      },
+      "trend_interpretation": {
+        "output": "**Visual Trajectory:**\n[10.2 -> 9.2 (Trough) -> 9.6 -> 9.9 kg | \ud83d\udd04 Fluid Loss then Rehydration Rebound]\n\n**Clinical Interpretation:**\nAcute weight drop from 10.2 to 9.2 kg was due to hypovolemic dehydration, not chronic malnutrition. Rapid rebound to 9.9 kg reflects rehydration recovery.\n\n**CHW Action:**\nContinue household ORS and complete the 14-day Zinc supplementation course. Maintain frequent feeding and monitor for diarrhea relapse.",
+        "metrics": {
+          "latency_s": 0.01,
+          "tokens": 42,
+          "tok_per_sec": 4200.0
+        },
+        "tier1_pass": true,
+        "tier1_failures": [],
+        "tier2_judge": null
+      }
+    }
+  ]
+}

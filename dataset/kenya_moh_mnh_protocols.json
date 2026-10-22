@@ -1,0 +1,1086 @@
+[
+  {
+    "id": "KENYA-MOH-MNH-01",
+    "domain": "02_mnh",
+    "topic": "ANC Booking & 8-Contact Schedule",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Antenatal Care Schedule & Household Registration",
+      "page_or_code": "MoH 514 / eCHIS ANC-01",
+      "verbatim_page_excerpt": "Every pregnant woman in the community must be registered in MoH 514 and supported to attend at least 8 ANC contacts at a health facility. Contact 1 should occur within the first 12 weeks of pregnancy. CHPs must track attendance and follow up missed appointments."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 0,
+      "max_gestation_weeks": 42,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "pregnancy",
+        "antenatal care",
+        "anc booking",
+        "gestation"
+      ],
+      "symptoms": [
+        "missed period",
+        "positive pregnancy test"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "Any confirmed pregnant woman living in the community unit.",
+      "danger_signs": [
+        "Missed first contact past 16 weeks gestation",
+        "More than 6 weeks overdue for scheduled facility contact"
+      ],
+      "mandated_chw_actions": [
+        "Register pregnancy in MoH 514 household register",
+        "Counsel on 8-contact schedule: Contact 1 (<12w), Contact 2 (20w), Contact 3 (26w), Contact 4 (30w), Contact 5 (34w), Contact 6 (36w), Contact 7 (38w), Contact 8 (40w)",
+        "Emphasize facility delivery with skilled birth attendant",
+        "Screen for early danger signs and initiate birth preparedness plan"
+      ],
+      "negative_boundaries": [
+        "Do not encourage or support planned home delivery",
+        "Do not delay registration until the third trimester",
+        "Do not refer to unregistered traditional birth attendants (TBAs)"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-01] ANC Booking & 8-Contact Schedule\nCRITERIA: All pregnant women in the community.\nACTIONS: Register in MoH 514. Counsel on 8-contact schedule starting <12 weeks (then 20w, 26w, 30w, 34w, 36w, 38w, 40w). Promote skilled facility delivery and individual birth planning.\nPROHIBITED: Do not endorse planned home delivery or traditional birth attendants."
+  },
+  {
+    "id": "KENYA-MOH-MNH-02",
+    "domain": "02_mnh",
+    "topic": "Hypertension & Suspected Pre-Eclampsia",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Managing Danger Signs in Pregnancy",
+      "page_or_code": "MoH 514 / eCHIS ANC-04",
+      "verbatim_page_excerpt": "Elevated blood pressure (systolic >= 140 mmHg or diastolic >= 90 mmHg) after 20 weeks gestation is abnormal. If accompanied by severe headache, visual disturbances, epigastric pain, or proteinuria, it is pre-eclampsia and requires immediate hospital referral."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 20,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "hypertension",
+        "pre-eclampsia",
+        "high bp",
+        "pregnancy-induced hypertension"
+      ],
+      "symptoms": [
+        "headache",
+        "blurred vision",
+        "epigastric pain",
+        "face swelling",
+        "flashes"
+      ],
+      "vital_thresholds": [
+        "bp >= 140/90",
+        "systolic >= 140",
+        "diastolic >= 90"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Gestation >= 20 weeks with SBP >= 140 mmHg OR DBP >= 90 mmHg.",
+      "danger_signs": [
+        "Severe persistent frontal headache not relieved by rest or simple analgesics",
+        "Visual disturbances (blurred vision, double vision, flashing lights)",
+        "Severe pain in the upper abdomen (epigastric pain) or persistent vomiting",
+        "Swelling of hands, face, or sudden excessive weight gain",
+        "Convulsions or twitching (eclampsia)"
+      ],
+      "mandated_chw_actions": [
+        "Initiate IMMEDIATE emergency referral to Level 4 Hospital / CEmoNC facility",
+        "Position patient comfortably on her left side to optimize placental blood flow",
+        "Assist family in organizing emergency community transport and companion",
+        "Reassure family; keep patient calm and in a quiet environment"
+      ],
+      "negative_boundaries": [
+        "STRICTLY FORBIDDEN: Do not prescribe or administer oral or injectable antihypertensives at home (no nifedipine, labetalol, hydralazine)",
+        "STRICTLY FORBIDDEN: Do not attempt parenteral magnesium sulfate injection",
+        "Do not administer home sedatives, herbal concoctions, or salt water remedies"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-02] Pre-Eclampsia & Hypertension\nCRITERIA: GA >= 20w, BP >= 140/90 mmHg or proteinuria >= 1+.\nDANGER SIGNS: Severe frontal headache, vision blur/flashes, epigastric pain, facial edema.\nMANDATED ACTIONS: Refer IMMEDIATELY to Level 4 Hospital. Arrange emergency transport. Position on left side.\nSTRICTLY FORBIDDEN: Do NOT administer antihypertensives or sedatives. Do NOT attempt Magnesium Sulfate injection at home.",
+    "certified": false,
+    "certified_by": null
+  },
+  {
+    "id": "KENYA-MOH-MNH-03",
+    "domain": "02_mnh",
+    "topic": "Antepartum Hemorrhage (Vaginal Bleeding in Pregnancy)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Obstetric Emergencies in the Community",
+      "page_or_code": "MoH 514 / eCHIS ANC-05",
+      "verbatim_page_excerpt": "Any vaginal bleeding after 20 weeks gestation is an obstetric emergency. Digital vaginal examination must NEVER be performed by a community health worker or traditional attendant as it can precipitate torrential fatal hemorrhage from placenta previa."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 20,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "antepartum hemorrhage",
+        "vaginal bleeding",
+        "bleeding in pregnancy",
+        "aph"
+      ],
+      "symptoms": [
+        "vaginal bleeding",
+        "bright red blood",
+        "dark blood",
+        "severe abdominal pain"
+      ],
+      "vital_thresholds": [
+        "shock",
+        "tachycardia",
+        "pallor"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Any vaginal bleeding occurring after 20 weeks gestation.",
+      "danger_signs": [
+        "Painless bright red vaginal bleeding (suspected placenta previa)",
+        "Severe continuous abdominal pain with dark bleeding (suspected placental abruption)",
+        "Maternal pallor, cold clammy extremities, faintness, rapid weak pulse (hypovolemic shock)"
+      ],
+      "mandated_chw_actions": [
+        "Arrange IMMEDIATE emergency ambulance/transport to hospital with surgical capacity",
+        "Instruct patient to lie strictly on her left side",
+        "Keep patient warm and calm",
+        "Do not give any solid food or oral fluids in case urgent emergency surgery/anesthesia is needed"
+      ],
+      "negative_boundaries": [
+        "ABSOLUTE CONTRAINDICATION: NEVER perform digital vaginal examination (PV exam) or allow anyone to examine the cervix",
+        "Do not pack the vagina with cloth, cotton, or tampons",
+        "Do not give herbal uterine contractions or traditional medicines"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-03] Antepartum Hemorrhage (Bleeding in Late Pregnancy)\nCRITERIA: Vaginal bleeding at >= 20 weeks gestation.\nDANGER SIGNS: Bright red or dark bleeding, severe uterine pain, pallor, shock.\nMANDATED ACTIONS: Immediate emergency hospital transfer. Keep lying on left side. Withhold oral food/drink for surgery.\nABSOLUTE CONTRAINDICATION: NEVER perform digital vaginal exam. Do NOT pack the vagina."
+  },
+  {
+    "id": "KENYA-MOH-MNH-04",
+    "domain": "02_mnh",
+    "topic": "Maternal Anemia & Nutritional Supplementation",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Nutrition & Micronutrient Supplementation in Pregnancy",
+      "page_or_code": "MoH 514 / eCHIS ANC-02",
+      "verbatim_page_excerpt": "All pregnant women must take daily Iron and Folic Acid Supplementation (IFAS). Pale palms, conjunctiva, or breathlessness indicates anemia. Severe pallor requires urgent referral for hemoglobin evaluation."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 0,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "anemia",
+        "severe anemia",
+        "iron deficiency",
+        "pallor"
+      ],
+      "symptoms": [
+        "fatigue",
+        "dizziness",
+        "shortness of breath",
+        "pale palms",
+        "pale conjunctiva"
+      ],
+      "vital_thresholds": [
+        "hb < 11.0",
+        "hb < 7.0"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Pregnant woman with pale conjunctiva/palms, fatigue, or known low hemoglobin.",
+      "danger_signs": [
+        "Severe pallor of palms, tongue, and nailbeds",
+        "Extreme breathlessness at rest or dizziness upon standing",
+        "Swelling of ankles and legs with rapid pulse"
+      ],
+      "mandated_chw_actions": [
+        "Counsel on strict daily compliance with IFAS (60mg elemental iron / 400mcg folic acid)",
+        "Educate on eating iron-rich foods (liver, meat, eggs, beans, dark green leafy vegetables) combined with citrus fruit",
+        "If severe pallor is present: refer urgently to health facility for Hb testing and blood transfusion workup",
+        "Reassure mother that dark stools are a normal, harmless side-effect of iron tablets"
+      ],
+      "negative_boundaries": [
+        "Do not advise taking iron tablets with tea, coffee, or milk (tannins and calcium block iron absorption)",
+        "Do not manage severe pallor at home with diet alone without hospital referral"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-04] Maternal Anemia & IFAS\nCRITERIA: Pale conjunctiva/palms, fatigue, or low Hb.\nDANGER SIGNS: Severe pallor, breathlessness at rest, ankle edema.\nMANDATED ACTIONS: Daily IFAS compliance (iron + folic acid). Iron-rich diet with vitamin C. Refer severe pallor urgently for Hb test.\nPROHIBITED: Do not take iron with tea/coffee/milk. Do not manage severe anemia at home."
+  },
+  {
+    "id": "KENYA-MOH-MNH-05",
+    "domain": "02_mnh",
+    "topic": "Fever & Malaria in Pregnancy (IPTp-SP)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Malaria Prevention and Case Management in Pregnancy",
+      "page_or_code": "MoH 514 / eCHIS ANC-06",
+      "verbatim_page_excerpt": "Fever in pregnancy in malaria-endemic zones is an emergency due to risks of miscarriage and maternal death. IPTp-SP must be initiated starting from 13 weeks gestation, given at monthly intervals up to delivery. Bed nets must be used daily."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 0,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "malaria",
+        "fever in pregnancy",
+        "iptp",
+        "iptp-sp"
+      ],
+      "symptoms": [
+        "fever",
+        "chills",
+        "sweating",
+        "joint pain",
+        "headache"
+      ],
+      "vital_thresholds": [
+        "temp >= 37.5"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Pregnant woman presenting with fever (Temp >= 37.5\u00b0C) or living in malaria transmission zones.",
+      "danger_signs": [
+        "High fever (>38.5\u00b0C) or persistent vomiting",
+        "Altered consciousness, convulsions, or extreme lethargy (cerebral malaria)",
+        "Jaundice or dark/black urine (hemoglobinuria)"
+      ],
+      "mandated_chw_actions": [
+        "Perform malaria mRDT if trained and commodities available; otherwise refer immediately for lab testing",
+        "Track and support IPTp-SP uptake: ensure 1 dose of Sulfadoxine-Pyrimethamine (SP) at every scheduled ANC visit from 13 weeks onwards (min 3 doses)",
+        "Confirm daily use of Long-Lasting Insecticidal Net (LLIN)",
+        "Promptly refer any pregnant woman with fever and positive RDT to health facility for supervised ACT treatment"
+      ],
+      "negative_boundaries": [
+        "NEVER administer IPTp-SP in the first trimester (<13 weeks gestation)",
+        "NEVER administer SP to patients taking daily Cotrimoxazole (Bactrim) prophylaxis (risk of severe antifolate toxicity)",
+        "Do not treat fever in pregnancy with simple paracetamol alone without facility evaluation"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-05] Malaria in Pregnancy & IPTp-SP\nCRITERIA: Fever (Temp >= 37.5\u00b0C) or malaria prevention in pregnancy.\nDANGER SIGNS: High fever, vomiting, convulsions, jaundice, dark urine.\nMANDATED ACTIONS: Verify daily LLIN use. Track monthly IPTp-SP doses starting at 13 weeks (minimum 3 doses). Refer fever for mRDT and facility treatment.\nCONTRAINDICATIONS: NEVER give SP in first trimester (<13w). NEVER give SP if taking Cotrimoxazole."
+  },
+  {
+    "id": "KENYA-MOH-MNH-06",
+    "domain": "02_mnh",
+    "topic": "Premature Rupture of Membranes (PROM)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Danger Signs and Complications of Pregnancy",
+      "page_or_code": "MoH 514 / eCHIS ANC-07",
+      "verbatim_page_excerpt": "Leakage of watery fluid from the birth canal before labor pains begin is premature rupture of membranes. It carries a severe risk of ascending intra-amniotic infection and cord prolapse. Urgent referral is required."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 20,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "prom",
+        "premature rupture of membranes",
+        "water breaking",
+        "leaking fluid"
+      ],
+      "symptoms": [
+        "watery fluid leaking",
+        "trickling of fluid",
+        "wetting clothes"
+      ],
+      "vital_thresholds": [
+        "temp > 38.0"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Sudden gush or persistent trickling of clear or colored fluid from vagina without active labor.",
+      "danger_signs": [
+        "Foul-smelling or discolored (greenish/brown) amniotic fluid",
+        "Maternal fever (Temp >= 38.0\u00b0C) or chills (chorioamnionitis)",
+        "Loop of umbilical cord protruding from the vagina (cord prolapse)",
+        "Reduced or absent fetal movements"
+      ],
+      "mandated_chw_actions": [
+        "Refer urgently to health facility with inpatient obstetric capability",
+        "Apply a clean dry pad to catch leakage and monitor color and odor",
+        "Record the exact time fluid leakage began",
+        "If cord prolapse is visible: place mother in knee-chest position immediately and rush to facility"
+      ],
+      "negative_boundaries": [
+        "ABSOLUTELY FORBIDDEN: Do not perform vaginal examination (introduces lethal pathogens)",
+        "Do not advise taking tub baths or washing inside the vagina",
+        "Do not administer antibiotics at home"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-06] Premature Rupture of Membranes (PROM)\nCRITERIA: Gush or continuous trickling of fluid before labor contractions.\nDANGER SIGNS: Foul-smelling/green fluid, maternal fever, cord prolapse, reduced fetal movement.\nMANDATED ACTIONS: Urgent facility transfer. Apply clean sanitary pad. Note leakage time. Knee-chest position if cord visible.\nFORBIDDEN: Do NOT perform vaginal examination. Do NOT insert anything into vagina."
+  },
+  {
+    "id": "KENYA-MOH-MNH-07",
+    "domain": "02_mnh",
+    "topic": "Individual Birth Plan & Complication Readiness (BPCR)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Birth Preparedness and Emergency Logistics",
+      "page_or_code": "MoH 514 / eCHIS BPCR-01",
+      "verbatim_page_excerpt": "By the 28th week of gestation, every pregnant woman must have an agreed Individual Birth Plan documented in MoH 514. This includes chosen health facility, designated transport, emergency savings fund, and designated blood donor."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 20,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "birth plan",
+        "bpcr",
+        "birth preparedness",
+        "complication readiness"
+      ],
+      "symptoms": [
+        "third trimester",
+        "gestation >= 28w"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "All pregnant women at >= 20 weeks gestation.",
+      "danger_signs": [
+        "No birth plan established by 32 weeks gestation",
+        "No allocated emergency funds or lack of identified motorized transport",
+        "Intention to deliver at home or with traditional birth attendant"
+      ],
+      "mandated_chw_actions": [
+        "Review and record 5 components of BPCR in MoH 514: 1) Identified health facility; 2) Designated birth companion; 3) Emergency transport driver contact; 4) Emergency savings; 5) Potential compatible blood donor",
+        "Ensure essential newborn items are gathered: clean baby clothes, blankets, cap, diapers",
+        "Engage husband/partner and household decision-makers to secure financial and logistical agreement"
+      ],
+      "negative_boundaries": [
+        "Do not support or agree to home delivery plans",
+        "Do not rely on walking or wheelbarrows as an emergency transport plan"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-07] Individual Birth Plan (BPCR)\nCRITERIA: All pregnant women (finalize by 28-32 weeks).\nMANDATED ACTIONS: Complete 5-point birth plan in MoH 514: 1) Facility choice; 2) Birth companion; 3) Emergency transport contact; 4) Savings fund; 5) Potential blood donor. Gather newborn warmth kit.\nPROHIBITED: Do not endorse planned home births or unverified transport arrangements."
+  },
+  {
+    "id": "KENYA-MOH-MNH-08",
+    "domain": "02_mnh",
+    "topic": "Labor Signs vs. False Labor & Facility Escort",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Normal Labor, Danger Signs, and Delivery Escort",
+      "page_or_code": "MoH 514 / eCHIS LAB-01",
+      "verbatim_page_excerpt": "True labor contractions become stronger, longer, and closer together. False labor pains are irregular and fade with walking or resting. CHPs must escort women in true labor to the health facility without delay."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 37,
+      "patient_status": "pregnant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "labor",
+        "labor pains",
+        "contractions",
+        "false labor"
+      ],
+      "symptoms": [
+        "abdominal cramps",
+        "backache",
+        "bloody show",
+        "urge to push"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "Woman at term (>= 37 weeks) reporting lower abdominal cramping or backache.",
+      "danger_signs": [
+        "Contractions occurring every 2-3 minutes with urge to push (imminent birth)",
+        "Bright red bleeding, meconium-stained fluid, or severe unrelenting pain",
+        "Labor lasting longer than 12 hours without delivery (prolonged labor)"
+      ],
+      "mandated_chw_actions": [
+        "Differentiate true labor (regular, tightening, increasing frequency/intensity, bloody show) from false labor (irregular, relieved by rest)",
+        "If true labor confirmed: immediately call designated transport and escort woman to facility",
+        "Carry maternal health booklet (MoH 216) and emergency contact details",
+        "Encourage calm breathing and supportive positioning during travel"
+      ],
+      "negative_boundaries": [
+        "Do not wait until the head is crowning to initiate travel",
+        "STRICTLY FORBIDDEN: Do not administer traditional labor-accelerating herbs ('kaloba' / uterine stimulants)",
+        "Do not advise prolonged pushing before reaching the health facility"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-08] Labor Signs & Facility Escort\nCRITERIA: Gestation >= 37 weeks with labor contractions.\nDANGER SIGNS: Contractions every 2-3 min, urge to push, vaginal bleeding, labor >12 hours.\nMANDATED ACTIONS: Verify true labor (regular contractions, bloody show). Immediately activate transport and escort to facility with MoH 216 card.\nPROHIBITED: Never give traditional labor herbs. Do not delay facility transfer."
+  },
+  {
+    "id": "KENYA-MOH-MNH-09",
+    "domain": "02_mnh",
+    "topic": "Imminent / Unavoidable Home Delivery Triage",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Emergency Delivery Triage in Community Settings",
+      "page_or_code": "MoH 514 / eCHIS LAB-02",
+      "verbatim_page_excerpt": "If delivery is imminent and transfer is impossible, ensure clean hands and surfaces. Support the baby's head gently without pulling. Place baby skin-to-skin immediately. Never pull the umbilical cord to deliver the placenta."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "min_gestation_weeks": 28,
+      "patient_status": "in_labor"
+    },
+    "trigger_index": {
+      "conditions": [
+        "imminent delivery",
+        "unavoidable birth",
+        "home birth"
+      ],
+      "symptoms": [
+        "crowning",
+        "head visible",
+        "uncontrollable urge to push"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "Baby's head visible at vaginal opening (crowning); impossible to reach facility in time.",
+      "danger_signs": [
+        "Loop of umbilical cord prolapsed ahead of head",
+        "Hand, foot, or breech presentation (malpresentation)",
+        "Retained placenta (>30 minutes after baby's birth) or severe bleeding"
+      ],
+      "mandated_chw_actions": [
+        "Wash hands thoroughly with soap and clean running water; spread clean dry cloth under mother",
+        "Support head gently as it delivers; do not pull baby",
+        "Immediately wipe baby's face, dry body thoroughly, and place skin-to-skin on mother's bare chest; cover with warm dry cloth and cap",
+        "Wait 1-3 minutes before tying cord with two clean ties (at 2cm and 5cm from abdomen) and cut with sterile blade",
+        "Encourage immediate breastfeeding; massage fundus gently after placenta delivers spontaneously",
+        "Arrange immediate post-delivery transfer of mother-baby dyad to health facility"
+      ],
+      "negative_boundaries": [
+        "STRICTLY FORBIDDEN: NEVER pull on the umbilical cord to speed delivery of placenta (causes fatal uterine inversion)",
+        "NEVER insert fingers or hands into the birth canal",
+        "Do not bathe the baby for at least 24 hours"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-09] Imminent Emergency Delivery\nCRITERIA: Head crowning; delivery unavoidable before transport.\nMANDATED ACTIONS: Clean hands. Support head gently (no pulling). Dry baby immediately. Skin-to-skin on mother's chest. Tie cord at 2cm and 5cm with clean ties. Cut with sterile blade. Immediate breastfeeding. Escort dyad to facility.\nABSOLUTELY FORBIDDEN: NEVER pull the cord to deliver placenta. Never insert hands into birth canal."
+  },
+  {
+    "id": "KENYA-MOH-MNH-10",
+    "domain": "02_mnh",
+    "topic": "Postnatal Care (PNC) Visit Schedule",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Postnatal Home Visit Schedule & Assessment",
+      "page_or_code": "MoH 514 / eCHIS PNC-01",
+      "verbatim_page_excerpt": "The first 48 hours after birth carry the highest risk of maternal and neonatal death. CHPs must visit the mother and baby within 24 hours of birth, followed by visits on Day 3 (48-72h), Day 7-14, and at 6 weeks."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "patient_status": "postpartum"
+    },
+    "trigger_index": {
+      "conditions": [
+        "pnc",
+        "postnatal care",
+        "postpartum visit"
+      ],
+      "symptoms": [
+        "recent delivery",
+        "new mother",
+        "pnc schedule"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "All recently delivered mothers and newborns in the community unit.",
+      "danger_signs": [
+        "No PNC contact within first 48 hours after delivery",
+        "Fever, heavy bleeding, or newborn inability to feed at any visit"
+      ],
+      "mandated_chw_actions": [
+        "Conduct 4 scheduled home PNC visits: Visit 1 (<24h), Visit 2 (Day 3 / 48-72h), Visit 3 (Day 7-14), Visit 4 (6 weeks)",
+        "Assess maternal vitals, uterine involution, vaginal bleeding (lochia), and emotional well-being",
+        "Assess newborn cord healing, temperature, breathing rate, color, and breastfeeding latch",
+        "Verify birth registration and confirm BCG and OPV0 immunization uptake"
+      ],
+      "negative_boundaries": [
+        "Do not delay the first visit beyond 48 hours post-delivery",
+        "Do not discharge a mother-baby dyad from active monitoring if danger signs are present"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-10] Postnatal Care (PNC) Schedule\nCRITERIA: All recently delivered mothers and newborns.\nMANDATED ACTIONS: Conduct 4 PNC visits: Visit 1 (<24h), Visit 2 (Day 3), Visit 3 (Day 7-14), Visit 4 (6 weeks). Check maternal bleeding, fever, depression; check newborn cord, breathing, temperature, and breastfeeding.\nRULE: Never delay the first PNC visit beyond 48 hours."
+  },
+  {
+    "id": "KENYA-MOH-MNH-11",
+    "domain": "02_mnh",
+    "topic": "Postpartum Hemorrhage (PPH) Triage",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Postpartum Emergencies in the Community",
+      "page_or_code": "MoH 514 / eCHIS PNC-02",
+      "verbatim_page_excerpt": "Severe bleeding after delivery (soaking more than two sanitary pads in an hour or continuous trickle) is postpartum hemorrhage. It is the leading cause of maternal mortality. Continuous fundal massage and immediate emergency referral are required."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "patient_status": "postpartum"
+    },
+    "trigger_index": {
+      "conditions": [
+        "postpartum hemorrhage",
+        "pph",
+        "excessive bleeding after birth",
+        "uterine atony"
+      ],
+      "symptoms": [
+        "heavy bleeding",
+        "soaking pads",
+        "clots",
+        "dizziness",
+        "fainting"
+      ],
+      "vital_thresholds": [
+        "shock",
+        "tachycardia",
+        "hypotension"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Woman who has delivered within the past 6 weeks soaking >2 large pads in 1 hour or passing large clots.",
+      "danger_signs": [
+        "Continuous trickling or gushing of blood from vagina",
+        "Soft, boggy uterus that does not harden on palpation",
+        "Maternal pallor, cold extremities, rapid weak pulse, dizziness, or loss of consciousness"
+      ],
+      "mandated_chw_actions": [
+        "ACT IMMEDIATELY: Call emergency transport for transfer to hospital with blood transfusion and surgical capacity",
+        "Perform vigorous, circular uterine fundal massage until uterus contracts into a firm, hard ball",
+        "Put newborn to breast immediately (suckling stimulates natural oxytocin release and uterine contraction)",
+        "Keep mother lying flat with legs elevated 30 cm; keep warm with blankets; do not leave unattended"
+      ],
+      "negative_boundaries": [
+        "STRICTLY FORBIDDEN: NEVER pack the vagina with cloth, cotton, or towels (conceals internal bleeding)",
+        "NEVER give herbal remedies or sedatives",
+        "Do not stop fundal massage until uterus is firm and transfer arrives"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-11] Postpartum Hemorrhage (PPH)\nCRITERIA: Soaking >2 pads in 1 hour, continuous bleeding, or boggy uterus.\nDANGER SIGNS: Gushing blood, dizziness, pallor, rapid pulse, loss of consciousness.\nMANDATED ACTIONS: EMERGENCY transfer to Level 4 Hospital. Vigorously massage uterine fundus until firm. Put baby to breast immediately. Elevate legs, keep warm.\nABSOLUTELY FORBIDDEN: Never pack vagina with cloth. Do not give herbal concoctions."
+  },
+  {
+    "id": "KENYA-MOH-MNH-12",
+    "domain": "02_mnh",
+    "topic": "Puerperal Sepsis (Postpartum Infection)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Postpartum Infections and Management",
+      "page_or_code": "MoH 514 / eCHIS PNC-03",
+      "verbatim_page_excerpt": "Fever greater than 38\u00b0C occurring between delivery and 42 days postpartum, accompanied by foul-smelling vaginal discharge and pelvic pain, is puerperal sepsis. It requires urgent hospital referral for systemic intravenous antibiotics."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "patient_status": "postpartum"
+    },
+    "trigger_index": {
+      "conditions": [
+        "puerperal sepsis",
+        "postpartum infection",
+        "endometritis",
+        "foul lochia"
+      ],
+      "symptoms": [
+        "fever",
+        "chills",
+        "foul smelling discharge",
+        "lower abdominal pain",
+        "pelvic tenderness"
+      ],
+      "vital_thresholds": [
+        "temp >= 38.0"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Woman within 42 days of delivery presenting with fever (Temp >= 38.0\u00b0C) or foul lochia.",
+      "danger_signs": [
+        "Foul-smelling, purulent vaginal discharge (lochia)",
+        "Severe continuous lower abdominal or uterine tenderness",
+        "High fever with rigors, sweating, and rapid breathing",
+        "Lethargy, confusion, or drop in blood pressure (septic shock)"
+      ],
+      "mandated_chw_actions": [
+        "Refer urgently to Level 4 Health Facility for clinical workup and intravenous antibiotic therapy",
+        "Encourage clean fluid intake to prevent dehydration",
+        "Instruct on hygiene: change clean pads frequently; wash hands before and after perineal care",
+        "Help arrange transport and child care for older siblings"
+      ],
+      "negative_boundaries": [
+        "STRICTLY FORBIDDEN: Do not treat with oral paracetamol alone without facility referral",
+        "STRICTLY FORBIDDEN: Do not douch, wash inside the vagina, or insert herbal pessaries",
+        "Do not delay referral beyond 4 hours"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-12] Puerperal Sepsis (Postpartum Infection)\nCRITERIA: Postpartum fever (Temp >= 38.0\u00b0C) or foul vaginal discharge within 6 weeks.\nDANGER SIGNS: Foul-smelling lochia, severe lower abdominal tenderness, chills, septic shock.\nMANDATED ACTIONS: Urgent referral to Level 4 Hospital for IV antibiotics. Encourage hydration. Strict hand hygiene.\nFORBIDDEN: Do not treat with simple analgesics alone. NEVER douche or wash inside vagina."
+  },
+  {
+    "id": "KENYA-MOH-MNH-13",
+    "domain": "02_mnh",
+    "topic": "Maternal Postpartum Mental Health & Depression",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Mental Health and Psychosocial Support in the Postnatal Period",
+      "page_or_code": "MoH 514 / eCHIS PNC-04",
+      "verbatim_page_excerpt": "Postpartum depression and psychosis can occur within the first year after delivery. Severe depression, withdrawal, or thoughts of self-harm or harming the infant require immediate medical and psychiatric assessment."
+    },
+    "target_cohort": {
+      "gender": "female",
+      "patient_status": "postpartum"
+    },
+    "trigger_index": {
+      "conditions": [
+        "postpartum depression",
+        "postnatal depression",
+        "maternal mental health",
+        "psychosis"
+      ],
+      "symptoms": [
+        "extreme sadness",
+        "crying constantly",
+        "refusing to hold baby",
+        "detachment",
+        "self-harm"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "Postpartum mother exhibiting persistent low mood, loss of interest, severe anxiety, or detachment from newborn.",
+      "danger_signs": [
+        "Mother expressing thoughts of suicide or self-harm",
+        "Mother expressing thoughts or urges to harm the newborn",
+        "Disorganized speech, hearing voices, extreme agitation, or confusion (postpartum psychosis)",
+        "Complete refusal to feed, touch, or care for the newborn"
+      ],
+      "mandated_chw_actions": [
+        "Provide empathetic, non-judgmental listening; reassure mother that depression is a treatable medical condition, not a personal failure",
+        "Engage spouse, mother-in-law, or trusted family members to take over newborn care and household duties",
+        "If self-harm or psychosis signs are present: arrange IMMEDIATE escorted facility transfer to medical/psychiatric team",
+        "Ensure the infant is never left alone unsupervised with the mother if severe detachment or psychosis is suspected"
+      ],
+      "negative_boundaries": [
+        "Do not dismiss symptoms as 'spiritual weakness', 'demonic possession', or laziness",
+        "Do not recommend isolation or physical restraint at home"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-13] Maternal Postpartum Mental Health\nCRITERIA: Persistent sadness, crying, severe anxiety, or detachment within 1 year of birth.\nDANGER SIGNS: Thoughts of self-harm or harming baby, hallucinations, hearing voices, refusal to care for infant.\nMANDATED ACTIONS: Empathetic counseling. Mobilize family support for infant care. Immediate escorted referral for psychiatric evaluation if self-harm/psychosis suspected. Keep infant supervised.\nPROHIBITED: Do not dismiss as spiritual weakness. Never leave infant unmonitored."
+  },
+  {
+    "id": "KENYA-MOH-MNH-14",
+    "domain": "02_mnh",
+    "topic": "Immediate Newborn Thermal Care & Protection",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Essential Newborn Care at Birth",
+      "page_or_code": "MoH 514 / eCHIS NEW-01",
+      "verbatim_page_excerpt": "Newborn hypothermia is a silent killer. Immediate drying, direct skin-to-skin contact with the mother, and delayed bathing for at least 24 hours are vital protective interventions."
+    },
+    "target_cohort": {
+      "gender": "neonate",
+      "min_age_days": 0,
+      "max_age_days": 28,
+      "patient_status": "newborn"
+    },
+    "trigger_index": {
+      "conditions": [
+        "hypothermia",
+        "thermal protection",
+        "newborn care",
+        "cold baby"
+      ],
+      "symptoms": [
+        "cold feet",
+        "cold hands",
+        "shivering",
+        "lethargy",
+        "pale skin"
+      ],
+      "vital_thresholds": [
+        "temp < 36.5",
+        "temp > 37.5"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "All newborns from delivery through the first 28 days of life.",
+      "danger_signs": [
+        "Axillary temperature < 36.5\u00b0C (hypothermia) or cold extremities with blue lips",
+        "Baby cold to touch, sluggish, weak cry, and refusing to breastfeed",
+        "Body temperature > 37.5\u00b0C (hyperthermia or fever)"
+      ],
+      "mandated_chw_actions": [
+        "Immediately place newborn naked (with diaper and cap) skin-to-skin on mother's bare chest; cover both with warm dry blanket",
+        "Keep room warm (>25\u00b0C), closed, and protected from drafts",
+        "Ensure baby wears a warm hat and socks; change wet diapers immediately",
+        "Promote frequent breastfeeding every 2 hours to provide calories for thermoregulation",
+        "If temp remains < 36.5\u00b0C despite 1 hour of skin-to-skin: refer urgently to health facility"
+      ],
+      "negative_boundaries": [
+        "ABSOLUTELY FORBIDDEN: Do not bathe the newborn within the first 24 hours of life",
+        "NEVER use hot water bottles, charcoal jikos, or open flames near the baby (severe risk of burns and carbon monoxide poisoning)",
+        "Do not leave newborn unwrapped on cold scales or tables"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-14] Newborn Thermal Care & Hypothermia\nCRITERIA: All newborns (0-28 days).\nDANGER SIGNS: Axillary temp < 36.5\u00b0C, cold extremities, weak suckling, blue lips, temp > 37.5\u00b0C.\nMANDATED ACTIONS: Immediate skin-to-skin contact on mother's chest. Warm hat, socks, blanket. Breastfeed every 2 hours. Refer if cold persists after 1 hour.\nFORBIDDEN: Do NOT bathe within first 24 hours. NEVER use hot water bottles or charcoal jikos near baby."
+  },
+  {
+    "id": "KENYA-MOH-MNH-15",
+    "domain": "02_mnh",
+    "topic": "Cord Care with 7.1% Chlorhexidine Digluconate Gel",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Clean Cord Care and Infection Prevention",
+      "page_or_code": "MoH 514 / eCHIS NEW-02",
+      "verbatim_page_excerpt": "Apply 7.1% Chlorhexidine digluconate gel to the cord stump and surrounding skin daily for the first 7 days of life. Never apply cow dung, ash, soot, cooking oil, or traditional powders to the cord."
+    },
+    "target_cohort": {
+      "gender": "neonate",
+      "min_age_days": 0,
+      "max_age_days": 28,
+      "patient_status": "newborn"
+    },
+    "trigger_index": {
+      "conditions": [
+        "cord care",
+        "chlorhexidine",
+        "umbilicus",
+        "umbilical stump"
+      ],
+      "symptoms": [
+        "cord drying",
+        "cord falling off",
+        "cord hygiene"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "All newborns from birth until the umbilical cord stump separates and heals.",
+      "danger_signs": [
+        "Application of animal dung, mud, ash, or unprescribed powders to the cord",
+        "Bleeding from the cord tie or cut surface"
+      ],
+      "mandated_chw_actions": [
+        "Teach mother clean handwashing with soap and clean water before touching the cord",
+        "Demonstrate application of 7.1% Chlorhexidine digluconate gel (delivering 4% chlorhexidine) to the cord stump, base, and around umbilicus once daily for 7 days",
+        "Keep the cord stump clean, exposed to air, and loosely covered with clean loose clothing",
+        "Fold the diaper below the umbilicus to avoid urine contamination"
+      ],
+      "negative_boundaries": [
+        "ABSOLUTE PROHIBITION: Do NOT apply cow dung, mud, ash, soot, saliva, breast milk, or herbal pastes to the cord",
+        "Do NOT bandage, bind, or seal the cord stump with coins or tight cloth wraps",
+        "Do not pull on the cord stump even if it is hanging by a thread"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-15] Cord Care & 7.1% Chlorhexidine\nCRITERIA: Daily cord care for all newborns until healed.\nMANDATED ACTIONS: Wash hands with soap. Apply 7.1% Chlorhexidine gel to cord stump and base once daily for 7 days. Keep exposed to air. Fold diaper below umbilicus.\nSTRICTLY FORBIDDEN: NEVER apply cow dung, ash, oil, saliva, or herbs. Do NOT bandage tightly or pull stump."
+  },
+  {
+    "id": "KENYA-MOH-MNH-16",
+    "domain": "02_mnh",
+    "topic": "Kangaroo Mother Care (KMC) for Low Birth Weight (<2.5 kg)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Care of the Small and Low Birth Weight Newborn",
+      "page_or_code": "MoH 514 / eCHIS NEW-03",
+      "verbatim_page_excerpt": "Babies born weighing less than 2,500g or born before 37 weeks require Kangaroo Mother Care (KMC). Continuous skin-to-skin contact, frequent feeding, and infection control dramatically increase survival."
+    },
+    "target_cohort": {
+      "gender": "neonate",
+      "min_age_days": 0,
+      "max_age_days": 28,
+      "patient_status": "low_birth_weight"
+    },
+    "trigger_index": {
+      "conditions": [
+        "kmc",
+        "kangaroo mother care",
+        "low birth weight",
+        "preterm",
+        "small baby"
+      ],
+      "symptoms": [
+        "birth weight < 2.5kg",
+        "weak suckle",
+        "thin skin"
+      ],
+      "vital_thresholds": [
+        "weight < 2500g",
+        "weight < 2.5kg"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Stable newborn with birth weight < 2,500g (2.5 kg) or born before 37 completed weeks.",
+      "danger_signs": [
+        "Weight < 2,000g (< 2.0 kg) or inability to suckle from breast",
+        "Apneic pauses (baby stops breathing for >20 seconds or turns blue)",
+        "Persistent hypothermia (< 36.5\u00b0C) despite KMC",
+        "Loss of >10% of birth weight"
+      ],
+      "mandated_chw_actions": [
+        "Teach and support continuous Kangaroo Mother Care (KMC): position infant naked (cap and diaper only) upright on mother's bare chest between breasts",
+        "Secure baby with KMC binder or soft wrap; engage father or relatives to share KMC shifts",
+        "Support frequent exclusive breastfeeding or cup feeding with expressed breast milk every 2 hours",
+        "Weigh baby weekly using CHP hanging scale and track growth trajectory",
+        "Refer promptly if breathing difficulty, severe lethargy, or weight loss occurs"
+      ],
+      "negative_boundaries": [
+        "Do not isolate low birth weight baby in separate crib away from mother",
+        "Do not feed animal milk, infant formula, or tea",
+        "Do not use hot water bottles or warm stones"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-16] Kangaroo Mother Care (Low Birth Weight <2.5kg)\nCRITERIA: Stable infant birth weight < 2,500g or preterm.\nDANGER SIGNS: Weight < 2,000g, breathing pauses >20s, inability to feed, persistent hypothermia.\nMANDATED ACTIONS: Continuous skin-to-skin KMC in upright chest position. Warm cap and wrap. Feed expressed milk/breastfeed every 2 hours. Weekly weight tracking.\nPROHIBITED: Do not isolate baby from mother. Never give non-breastmilk liquids."
+  },
+  {
+    "id": "KENYA-MOH-MNH-17",
+    "domain": "02_mnh",
+    "topic": "Severe Neonatal Sepsis / Systemic Infection Triage",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Management of Sick Newborn and Referral Danger Signs",
+      "page_or_code": "MoH 514 / eCHIS NEW-04",
+      "verbatim_page_excerpt": "Any newborn with danger signs including inability to feed, convulsions, fast breathing (>60 breaths/min), severe chest indrawing, or fever/hypothermia has severe neonatal infection and requires immediate emergency hospital admission."
+    },
+    "target_cohort": {
+      "gender": "neonate",
+      "min_age_days": 0,
+      "max_age_days": 28,
+      "patient_status": "sick_newborn"
+    },
+    "trigger_index": {
+      "conditions": [
+        "neonatal sepsis",
+        "severe newborn infection",
+        "sick newborn",
+        "danger signs"
+      ],
+      "symptoms": [
+        "cannot feed",
+        "convulsions",
+        "fast breathing",
+        "chest indrawing",
+        "grunting",
+        "lethargic"
+      ],
+      "vital_thresholds": [
+        "rr >= 60",
+        "temp < 36.5",
+        "temp > 37.5"
+      ]
+    },
+    "clinical_payload": {
+      "entry_criteria": "Newborn (0-28 days) presenting with any general danger sign of severe illness.",
+      "danger_signs": [
+        "Inability to suckle, latch, or feed at all",
+        "Convulsions, fits, or abnormal twitching of limbs",
+        "Fast breathing (respiratory rate >= 60 breaths/min on two counts)",
+        "Severe lower chest wall indrawing (deep hollows on inhalation)",
+        "Grunting on exhalation or cyanosis (blue tongue/lips)",
+        "Abnormally sleepy, lethargic, or unconscious; floppy posture",
+        "Fever (Temp > 37.5\u00b0C) or severe hypothermia (< 36.5\u00b0C not correcting)"
+      ],
+      "mandated_chw_actions": [
+        "MEDICAL EMERGENCY: Facilitate IMMEDIATE emergency hospital transfer to Level 4/Newborn Unit",
+        "Instruct mother to carry baby skin-to-skin under her clothing to maintain warmth during transit",
+        "If baby is able to swallow: encourage frequent sips of expressed breast milk on the way",
+        "Alert receiving facility staff in advance if communication is available"
+      ],
+      "negative_boundaries": [
+        "STRICTLY FORBIDDEN: Do not administer oral or injectable antibiotics at home (must be given at hospital)",
+        "STRICTLY FORBIDDEN: Do not give cold water sponge baths to febrile newborns",
+        "Do not force-feed a convulsing or unconscious infant (risk of fatal aspiration)"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-17] Severe Neonatal Sepsis (Danger Signs)\nCRITERIA: Newborn 0-28 days with systemic danger signs.\nDANGER SIGNS: Inability to feed, convulsions, fast breathing >= 60/min, chest indrawing, grunting, lethargy, fever/hypothermia.\nMANDATED ACTIONS: MEDICAL EMERGENCY. Immediate transfer to hospital newborn unit. Keep skin-to-skin warm during transit. Sips of breast milk if swallowing.\nFORBIDDEN: Do NOT give antibiotics at home. Never force-feed a convulsing/unconscious baby."
+  },
+  {
+    "id": "KENYA-MOH-MNH-18",
+    "domain": "02_mnh",
+    "topic": "Omphalitis (Cord Infection with Redness & Pus)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Newborn Infections and Cord Complications",
+      "page_or_code": "MoH 514 / eCHIS NEW-05",
+      "verbatim_page_excerpt": "Redness extending onto the skin of the abdomen around the umbilicus, accompanied by pus or foul odor, is omphalitis. Because infection can rapidly spread internally to the peritoneum and liver, immediate hospital referral is mandatory."
+    },
+    "target_cohort": {
+      "gender": "neonate",
+      "min_age_days": 0,
+      "max_age_days": 28,
+      "patient_status": "newborn"
+    },
+    "trigger_index": {
+      "conditions": [
+        "omphalitis",
+        "cord infection",
+        "infected umbilicus",
+        "cord redness"
+      ],
+      "symptoms": [
+        "redness around cord",
+        "pus from cord",
+        "foul smell",
+        "swelling around umbilicus"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "Newborn presenting with umbilical redness, swelling, or purulent discharge.",
+      "danger_signs": [
+        "Redness extending onto the abdominal skin around the base (>1 cm)",
+        "Pus oozing from the cord stump with foul odor",
+        "Baby crying when the area around the umbilicus is gently touched",
+        "Accompanied by fever (Temp > 37.5\u00b0C), lethargy, or poor feeding"
+      ],
+      "mandated_chw_actions": [
+        "Refer IMMEDIATELY to Level 3/4 health facility for systemic antibiotic evaluation",
+        "Wash hands with soap and water; gently clean surface pus with sterile water and apply 7.1% Chlorhexidine gel",
+        "Counsel mother to keep the area clean and exposed; fold diaper down",
+        "Counsel family against traditional remedies; explain the risk of blood infection (sepsis)"
+      ],
+      "negative_boundaries": [
+        "ABSOLUTELY FORBIDDEN: Do NOT apply cow dung, ash, herbal pastes, or cooking oil",
+        "Do NOT squeeze, puncture, or cut the inflamed cord base",
+        "Do not bandage or seal with adhesive tape"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-18] Omphalitis (Severe Cord Infection)\nCRITERIA: Umbilical redness spreading to abdominal skin, pus, or foul odor.\nDANGER SIGNS: Redness >1cm around cord, pus, tenderness, fever, lethargy.\nMANDATED ACTIONS: Refer IMMEDIATELY to hospital for systemic antibiotics. Clean with clean water and apply 7.1% chlorhexidine. Counsel family against harmful traditional concoctions.\nPROHIBITED: Never apply cow dung, ash, or herbs. Do NOT squeeze or bandage."
+  },
+  {
+    "id": "KENYA-MOH-MNH-19",
+    "domain": "02_mnh",
+    "topic": "Neonatal Jaundice (Hyperbilirubinemia)",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Jaundice and Bilirubin Assessment in the Newborn",
+      "page_or_code": "MoH 514 / eCHIS NEW-06",
+      "verbatim_page_excerpt": "Jaundice appearing on the first day of life, or deep jaundice extending to the palms and soles at any time, is pathological. Untreated severe jaundice causes irreversible brain damage (kernicterus). Urgent referral for phototherapy is required."
+    },
+    "target_cohort": {
+      "gender": "neonate",
+      "min_age_days": 0,
+      "max_age_days": 28,
+      "patient_status": "newborn"
+    },
+    "trigger_index": {
+      "conditions": [
+        "jaundice",
+        "neonatal jaundice",
+        "yellow skin",
+        "hyperbilirubinemia"
+      ],
+      "symptoms": [
+        "yellow eyes",
+        "yellow skin",
+        "yellow palms",
+        "yellow soles"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "Newborn exhibiting yellowish discoloration of the whites of eyes, face, trunk, or extremities.",
+      "danger_signs": [
+        "Jaundice appearing within the first 24 hours of birth (always pathological)",
+        "Deep yellow palms and soles of the feet at any age",
+        "Dark urine or pale/clay-colored stools",
+        "Baby unusually sleepy, difficult to wake, arching back, or crying with high-pitched sound (kernicterus warning)"
+      ],
+      "mandated_chw_actions": [
+        "Refer urgently to health facility with laboratory bilirubin testing and phototherapy equipment",
+        "Encourage frequent exclusive breastfeeding (every 1.5 to 2 hours) to promote bowel movements and bilirubin excretion",
+        "Instruct family not to delay referral; explain brain toxicity risk"
+      ],
+      "negative_boundaries": [
+        "STRICTLY FORBIDDEN: Do not advise exposing the baby to direct burning sunlight (causes severe sunburn and dehydration without curing pathological jaundice)",
+        "Do not give glucose water, herbal concoctions, or formula feeds",
+        "Do not delay referral for jaundice extending to feet"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-19] Neonatal Jaundice\nCRITERIA: Yellow skin/eyes in newborn.\nDANGER SIGNS: Jaundice in first 24 hours of life; yellow palms and soles; dark urine/pale stool; high-pitched cry/lethargy.\nMANDATED ACTIONS: Urgent hospital referral for phototherapy/bilirubin testing. Feed frequently (every 2 hours) to clear bilirubin.\nFORBIDDEN: Do NOT place in direct burning sunlight. Never give glucose water or herbal tea."
+  },
+  {
+    "id": "KENYA-MOH-MNH-20",
+    "domain": "02_mnh",
+    "topic": "Exclusive Breastfeeding (EBF) & Latch Support",
+    "source_reference": {
+      "organization": "Kenya Ministry of Health",
+      "manual": "CHP Technical Training Manual - Module 2: Maternal and Newborn Health",
+      "section": "Infant and Young Child Feeding (IYCF) in Community Health",
+      "page_or_code": "MoH 514 / eCHIS NEW-07",
+      "verbatim_page_excerpt": "Initiate breastfeeding within the first hour of life. Practice exclusive breastfeeding for 6 months. Colostrum is the baby's first immunization. Prelacteal feeds such as water, sugar water, honey, or butter are strictly prohibited."
+    },
+    "target_cohort": {
+      "gender": "neonate",
+      "min_age_days": 0,
+      "max_age_days": 180,
+      "patient_status": "infant"
+    },
+    "trigger_index": {
+      "conditions": [
+        "breastfeeding",
+        "ebf",
+        "exclusive breastfeeding",
+        "latch",
+        "colostrum"
+      ],
+      "symptoms": [
+        "poor attachment",
+        "cracked nipples",
+        "breast engorgement",
+        "crying after feed"
+      ],
+      "vital_thresholds": []
+    },
+    "clinical_payload": {
+      "entry_criteria": "All newborns and infants up to 6 months of age.",
+      "danger_signs": [
+        "Baby unable to attach or maintain latch at breast",
+        "Mother experiencing severely cracked, bleeding, or infected nipples (mastitis)",
+        "Mother reporting giving prelacteal feeds (water, sugar water, tea, honey, animal milk)"
+      ],
+      "mandated_chw_actions": [
+        "Ensure initiation within 1st hour of life; ensure newborn receives golden colostrum",
+        "Assess and guide 4 signs of good attachment: 1) Mouth wide open; 2) Lower lip curled outward; 3) Chin touching breast; 4) More areola visible above than below mouth",
+        "Promote on-demand exclusive breastfeeding (at least 8-12 times in 24 hours, day and night)",
+        "Reassure mother that breast milk contains all needed water, even in hot weather"
+      ],
+      "negative_boundaries": [
+        "STRICTLY FORBIDDEN: Do NOT give prelacteal feeds (water, sugar water, honey, butter, animal milk, tea) \u2014 destroys gut barrier and causes lethal diarrhea",
+        "Do not discard colostrum",
+        "Do not use pacifiers, artificial teats, or feeding bottles"
+      ]
+    },
+    "prompt_injection_chunk": "### [PROTOCOL: KENYA-MOH-MNH-20] Exclusive Breastfeeding & Latch\nCRITERIA: All infants 0-6 months.\nMANDATED ACTIONS: Initiate within 1 hour. Feed colostrum. Ensure good attachment (mouth wide open, lower lip outward, chin on breast). Feed on demand 8-12 times/day. Give ONLY breastmilk for 6 months.\nSTRICTLY FORBIDDEN: NO prelacteal feeds (no water, sugar, honey, tea, butter, animal milk). No bottles or pacifiers."
+  }
+]
